@@ -45,7 +45,7 @@ class main extends Controller
                 $new_check->save();
             }
         }
-        return view('main', ['data' => $result]);
+        return view('main', ['data' => [$result, $new_check->lang]]);
     }
 }
 
