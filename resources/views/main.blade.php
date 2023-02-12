@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="wrap">
-        <form method="POST" action="/">
+        <form method="POST" action="/" class="main-form">
             <div class="form-group">
                 @csrf
                 <input type="text" name='user-input' autocomplete="off" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите строку">
@@ -24,7 +24,7 @@
         @if($data)
             <div class="wrap">
                 <p>Результат:</p>
-                {{ $data }}
+                {!! $data !!}
             </div>
         @endif
 
@@ -36,6 +36,24 @@
         #check-btn {
             width: 100%;
         }
+        .wrong-char {
+            color: red;
+        }
     </style>
+    <script>
+        @csrf
+        /*
+        let form = document.querySelector('.main-form')
+        let input = document.querySelector('input')
+        let temp = ''
+        input.addEventListener('input', (e) => {
+            temp = input.value
+        })
+        form.addEventListener('submit', (e) => {
+            e.stopPropagation()
+            input.value = temp
+        })
+         */
+    </script>
 </body>
 </html>
